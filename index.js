@@ -57,11 +57,11 @@ function addNewEmployee() {
         } else if (data.newEmployee === 'Intern') {
             internQuestions();
         } else {
-            let createCards = generateHTMLFile.createCards(team);
-            let HTMLinfo = generateHTMLFile.createBeginningHTML(team);
-            writeToFile('./dist/index.html', generateHTMLFile.createBeginningHTML());
+            let makeCards = generateHTMLFile.makeCards(team);
+            let HTMLinfo = generateHTMLFile.createStartingHTML(team);
+            writeToFile('./dist/index.html', generateHTMLFile.createStartingHTML());
             generateHTMLFile.cardHTML();
-            generateHTMLFile.createEndHTML(); 
+            generateHTMLFile.createFinalHTML(); 
         }
     })
 }
