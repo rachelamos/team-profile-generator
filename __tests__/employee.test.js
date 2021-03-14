@@ -1,6 +1,4 @@
-// const { expect } = require("@jest/globals");
-// const { describe } = require("yargs");
-const Employee = require("../employee");
+const Employee = require("../lib/employee");
 
 describe('Employee', () => {
     describe("Initialization", () => {
@@ -23,4 +21,28 @@ test('can add name, id, and email using the constructor', () => {
     expect(employee.name).toBe(name);
     expect(employee.id).toBe(id);
     expect(employee.email).toBe(email);
+});
+
+test('getName function returns name', () => {
+    const employee = new Employee("Rachel", 12, "some@gmail.com");
+
+    expect(employee.getName()).toBe("Rachel");
+});
+
+test('getId function returns id', () => {
+    const employee = new Employee("Rachel", 12, "some@gmail.com");
+
+    expect(employee.getId()).toBe("12");
+});
+
+test('getEmail function returns email', () => {
+    const employee = new Employee("Rachel", 12, "some@gmail.com");
+
+    expect(employee.getEmail()).toBe("some@gmail.com");
+});
+
+test('getRole function returns role', () => {
+    const employee = new Employee("Rachel", 12, "some@gmail.com");
+
+    expect(employee.getRole()).toBe("Employee");
 });

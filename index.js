@@ -1,4 +1,6 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateHTMLFile = require('./src/generateHTML');
 const Employee = require('./lib/employee');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
@@ -55,7 +57,11 @@ function addNewEmployee() {
         } else if (data.newEmployee === 'Intern') {
             internQuestions();
         } else {
-            // create building team functionality
+            let createCards = generateHTMLFile.createCards(team);
+            let HTMLinfo = generateHTMLFile.createBeginningHTML(team);
+            writeToFile('./dist/index.html', generateHTMLFile.createBeginningHTML());
+            generateHTMLFile.cardHTML();
+            generateHTMLFile.createEndHTML(); 
         }
     })
 }
@@ -118,5 +124,15 @@ function internQuestions() {
         team.push(internInfo);
         addNewEmployee();
     })
+}
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log("index.html created!"));
+}
+
+function appendToFile(fileName, data) {
+    fs.appendFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log('Commit Logged!'));
 }
 
