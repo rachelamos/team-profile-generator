@@ -136,3 +136,5 @@ function appendToFile(fileName, data) {
     err ? console.error(err) : console.log('Commit Logged!'));
 }
 
+init();
+
