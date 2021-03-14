@@ -36,13 +36,87 @@ function init() {
     .then((data) => {
         const managerInfo = new Manager(data.givenName, data.id, data.email, data.office);
         team.push(managerInfo);
-        newEmployee();
+        addNewEmployee();
     })
 }
 
-function newEmployee() {
+function addNewEmployee() {
     inquirer.prompt([
-
+        {
+            type: 'list',
+            name: 'newEmployee',
+            message: questions[4],
+            choices: ['Engineer', 'Intern', 'Build Team'],
+        },
     ])
+    .then((data) => {
+        if (data.newEmployee === 'Engineer') {
+            engineerQuestions();
+        } else if (data.newEmployee === 'Intern') {
+            internQuestions();
+        } else {
+            // create building team functionality
+        }
+    })
+}
+
+function engineerQuestions() {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'givenName',
+            message: employeeQuestions[0],
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: employeeQuestions[1],
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: employeeQuestions[2],
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: employeeQuestions[3],
+        }
+    ])
+    .then((data) => {
+        const engineerInfo = new Engineer(data.givenName, data.id, data.email, data.github);
+        team.push(engineerInfo);
+        addNewEmployee();
+    })
+}
+
+function internQuestions() {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'givenName',
+            message: employeeQuestions[0],
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: employeeQuestions[1],
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: employeeQuestions[2],
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: employeeQuestions[4],
+        }
+    ])
+    .then((data) => {
+        const internInfo = new Intern(data.givenName, data.id, data.email, data.school);
+        team.push(internInfo);
+        addNewEmployee();
+    })
 }
 
