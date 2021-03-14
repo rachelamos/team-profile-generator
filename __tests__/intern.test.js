@@ -14,7 +14,7 @@ describe("Intern", () => {
 });
 
 test('can add name, id, email, and school using the constructor', () => {
-    const name = "Rachel",
+    const name = "Rachel";
     const id = 12;
     const email = "some@gmail.com";
     const school = "Texas A&M";
@@ -34,7 +34,7 @@ test('getName function returns name', () => {
 test('getId function returns id', () => {
     const intern = new Intern("Rachel", 12, "some@gmail.com", "Texas A&M");
 
-    expect(intern.getId()).toBe("12");
+    expect(intern.getId()).toBe(12);
 });
 
 test('getEmail function returns email', () => {
@@ -46,7 +46,7 @@ test('getEmail function returns email', () => {
 test('getSchool function returns school', () => {
     const intern = new Intern("Rachel", 12, "some@gmail.com", "Texas A&M");
 
-    expect(intern.getGithub()).toBe("Texas A&M");
+    expect(intern.getSchool()).toBe("Texas A&M");
 });
 
 test('getRole function returns role', () => {

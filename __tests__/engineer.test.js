@@ -14,7 +14,7 @@ describe("Engineer", () => {
 });
 
 test('can add name, id, email, and github username using the constructor', () => {
-    const name = "Rachel",
+    const name = "Rachel";
     const id = 12;
     const email = "some@gmail.com";
     const github = "rachelamos";

@@ -32,7 +32,7 @@ test('getName function returns name', () => {
 test('getId function returns id', () => {
     const employee = new Employee("Rachel", 12, "some@gmail.com");
 
-    expect(employee.getId()).toBe("12");
+    expect(employee.getId()).toBe(12);
 });
 
 test('getEmail function returns email', () => {

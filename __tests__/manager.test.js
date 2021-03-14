@@ -14,7 +14,7 @@ describe("Manager", () => {
 });
 
 test('can add name, id, email, and officeNumber using the constructor', () => {
-    const name = "Rachel",
+    const name = "Rachel";
     const id = 12;
     const email = "some@gmail.com";
     const officeNumber = 1;

@@ -6,7 +6,8 @@ function makeCards(team) {
     for (let i = 0; i < team.length; i++){
         if(team[i].getRole() === "Manager"){
             empCard[i] =
-            `<div class="col">
+            `
+            <div class="col">
                 <div class="card-body" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">${team[i].getName()}</h5>
@@ -22,7 +23,8 @@ function makeCards(team) {
         }
         else if(team[i].getRole() === "Engineer"){
             empCard[i] =
-            `<div class="col">
+            `
+            <div class="col">
                 <div class="card-body" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">${team[i].getName()}</h5>
