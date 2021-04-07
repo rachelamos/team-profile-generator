@@ -57,8 +57,6 @@ function addNewEmployee() {
         } else if (data.newEmployee === 'Intern') {
             internQuestions();
         } else {
-            let makeCards = generateHTMLFile.makeCards(team);
-            let HTMLinfo = generateHTMLFile.createStartingHTML(team);
             writeToFile('./dist/index.html', generateHTMLFile.createStartingHTML());
             generateHTMLFile.cardHTML();
             generateHTMLFile.createFinalHTML(); 
